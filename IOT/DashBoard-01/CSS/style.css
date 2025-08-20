@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+    background: #000000;
+    color: #e0e6ed;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .container, .main-container {
+    background-color: #000000;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  .dados, .controle {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .dados:hover, .controle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    background: linear-gradient(45deg, #64b5f6, #42a5f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+  }
+  
+  .dados p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding: 20px;
+    background: rgba(0, 111, 238, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid #006fee;
+    border: 1px solid rgba(0, 111, 238, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 111, 238, 0.1);
+  }
+  
+  .dados p:hover {
+    background: rgba(0, 111, 238, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 111, 238, 0.2);
+    border-color: #006fee;
+  }
+  
+  #temp, #umid {
+    color: #006fee;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-shadow: 0 0 10px rgba(0, 111, 238, 0.3);
+  }
+  
+  .led-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .led-controls > div {
+    background: rgba(0, 111, 238, 0.08);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 111, 238, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .led-controls > div:hover {
+    background: rgba(0, 111, 238, 0.12);
+    border-color: #006fee;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 111, 238, 0.15);
+  }
+  
+  h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #e0e6ed;
+  }
+  
+  button {
+    background: linear-gradient(45deg, #2196f3, #1976d2);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 8px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  button:nth-child(3) {
+    background: linear-gradient(45deg, #f44336, #d32f2f);
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+  }
+  
+  button:nth-child(3):hover {
+    box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 10px;
+    }
+    
+    .dados, .controle {
+      padding: 20px;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    .dados p {
+      font-size: 1.1rem;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      margin: 5px;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .dados, .controle {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .controle {
+    animation-delay: 0.2s;
+  }
+  
+  /* Loading state for data */
+  #temp:empty::after,
+  #umid:empty::after {
+    content: "Carregando...";
+    color: #64b5f6;
+    opacity: 0.7;
+  }

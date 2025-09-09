@@ -52,20 +52,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Contador de truco</Text>
-      <Text style={styles.time}>Nós</Text>
-      <Text style={styles.counterText}>{contador}</Text>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.buttonTruco} onPress={handleTruco}>
-          <Text style={styles.buttonText}>TRUCO!</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleIncrement}>
-          <Text style={styles.buttonText}>Aumentar</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={handleDecrement}>
-          <Text style={styles.buttonText}>Diminuir</Text>
-        </TouchableOpacity>
-      </View>
 
       <View style={styles.invertedSection}>
         <Text style={styles.counterText}>{contador2}</Text>
@@ -83,6 +69,21 @@ export default function App() {
         </View>
       </View>
       <Text style={[styles.time, styles.invertedSection]}>Eles</Text>
+
+      <Text style={styles.time}>Nós</Text>
+      <Text style={styles.counterText}>{contador}</Text>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonTruco} onPress={handleTruco}>
+          <Text style={styles.buttonText}>TRUCO!</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={handleIncrement}>
+          <Text style={styles.buttonText}>Aumentar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={handleDecrement}>
+          <Text style={styles.buttonText}>Diminuir</Text>
+        </TouchableOpacity>
+      </View>
 
       <TouchableOpacity onPress={handleReset}>
         <Text style={styles.resetButton}>Reiniciar jogo</Text>

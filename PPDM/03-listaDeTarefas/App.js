@@ -54,14 +54,14 @@ const themes = {
 };
 
 export default function App() {
-  // Estados das tarefas (lógica original)
+  // Estados das tarefas
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
-  // PASSO 2: Estado do tema
+  // Estado do tema
   const [isDarkMode, setIsDarkMode] = useState(false); // false = light, true = dark
 
-  // PASSO 3: Pegar o tema atual baseado no estado
+  // Pegar o tema atual baseado no estado
   // Se isDarkMode for true, usa 'dark', senão usa 'light'
   const currentTheme = themes[isDarkMode ? "dark" : "light"];
 
@@ -211,7 +211,7 @@ export default function App() {
 
   /*
    * ===============================================
-   * RENDER PRINCIPAL - JSX
+   * RENDER PRINCIPAL
    * ===============================================
    */
 

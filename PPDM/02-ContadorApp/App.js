@@ -67,20 +67,22 @@ export default function App() {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.time}>Eles</Text>
-      <Text style={styles.counterText}>{contador2}</Text>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.buttonTruco} onPress={handleTruco2}>
-          <Text style={styles.buttonText}>TRUCO!</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleIncrement2}>
-          <Text style={styles.buttonText}>Aumentar</Text>
-        </TouchableOpacity>
+      <View style={styles.invertedSection}>
+        <Text style={styles.counterText}>{contador2}</Text>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.buttonTruco} onPress={handleTruco2}>
+            <Text style={styles.buttonText}>TRUCO!</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={handleIncrement2}>
+            <Text style={styles.buttonText}>Aumentar</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={handleDecrement2}>
-          <Text style={styles.buttonText}>Diminuir</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={handleDecrement2}>
+            <Text style={styles.buttonText}>Diminuir</Text>
+          </TouchableOpacity>
+        </View>
       </View>
+      <Text style={[styles.time, styles.invertedSection]}>Eles</Text>
 
       <TouchableOpacity onPress={handleReset}>
         <Text style={styles.resetButton}>Reiniciar jogo</Text>
@@ -112,6 +114,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#d9d9d9",
     marginTop: 20,
+    marginBottom: 20,
   },
 
   counterText: {
@@ -164,5 +167,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#dc3545",
     padding: 20,
     borderRadius: 10,
+  },
+
+  invertedSection: {
+    transform: [{ rotate: "180deg" }], // Inverte a seção
+    alignItems: "center", // Mantém alinhado
   },
 });

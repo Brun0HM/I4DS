@@ -1,0 +1,25 @@
+{
+  "name": "06-iotsensortemperatura",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "buffer": "^6.0.3",
+    "expo": "~53.0.22",
+    "expo-status-bar": "~2.2.3",
+    "mqtt": "^5.14.1",
+    "process": "^0.11.10",
+    "react": "19.0.0",
+    "react-native": "0.79.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}

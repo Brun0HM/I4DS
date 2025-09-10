@@ -150,25 +150,28 @@ export default function App() {
           </View>
         </View>
 
-        <SensorCard
-          title="Temperatura"
-          value={temperature}
-          unit="°C"
-          icon="🌡️"
-          progress={getTemperatureProgress()}
-          min={tempMin}
-          max={tempMax}
-        />
-
-        <SensorCard
-          title="Umidade"
-          value={humidity}
-          unit="%"
-          icon="💧"
-          progress={getHumidityProgress()}
-          min={humMin}
-          max={humMax}
-        />
+        <View style={styles.tabela}>
+          <SensorCard
+            title="Temperatura"
+            value={temperature}
+            unit="°C"
+            icon="🌡️"
+            progress={getTemperatureProgress()}
+            min={tempMin}
+            max={tempMax}
+          />
+        </View>
+        <View style={styles.tabela}>
+          <SensorCard
+            title="Umidade"
+            value={humidity}
+            unit="%"
+            icon="💧"
+            progress={getHumidityProgress()}
+            min={humMin}
+            max={humMax}
+          />
+        </View>
       </ScrollView>
     </View>
   );
@@ -181,5 +184,26 @@ const createStyles = (theme) =>
       backgroundColor: theme.background,
       alignItems: "center",
       justifyContent: "center",
+    },
+    tabela: {
+      marginBottom: 20,
+      padding: 20,
+      paddingEnd: 60,
+      paddingStart: 60,
+      borderRadius: 15,
+      backgroundColor: theme.card,
+      width: "100%",
+    },
+    headerTitle: {
+      fontSize: 36,
+      fontWeight: "bold",
+      color: theme.text,
+    },
+    connectionText: {
+      textAlign: "center",
+      marginBottom: 10,
+      color: theme.text,
+      fontSize: 16,
+      fontWeight: "bold",
     },
   });

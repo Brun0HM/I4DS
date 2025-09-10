@@ -97,7 +97,6 @@ export default function App() {
    * @returns {number} - Resultado da operação
    *
    * Pega valorAnterior [operacao] display e faz a conta
-   * Ex: valorAnterior=5, operacao="+", display="3" = 5+3 = 8
    */
   const calcular = () => {
     const anterior = valorAnterior; // Primeiro número
@@ -111,22 +110,20 @@ export default function App() {
     // Faz a conta baseada na operação
     switch (operacao) {
       case "+":
-        return anterior + atual; // Soma
+        return anterior + atual;
       case "-":
-        return anterior - atual; // Subtração
+        return anterior - atual;
       case "×":
-        return anterior * atual; // Multiplicação
+        return anterior * atual;
       case "÷":
-        // Divisão com proteção contra divisão por zero
         return atual !== 0 ? anterior / atual : 0;
       default:
-        return atual; // Se der merda, retorna o número atual
+        return atual;
     }
   };
 
   /**
-   * Função do botão de igual (=)
-   * Executa a conta e mostra o resultado
+   * Função do botão de igual
    */
   const handleIgual = () => {
     const resultado = calcular(); // Faz a conta
@@ -156,7 +153,6 @@ export default function App() {
         <Text style={styles.title}>Calculadora</Text>
       </View>
 
-      {/* Display que mostra os números */}
       <View style={styles.inputContainer}>
         <Text style={styles.title}>{display}</Text>
       </View>
@@ -233,7 +229,7 @@ export default function App() {
         >
           <Text style={styles.buttonText}>×</Text>
         </TouchableOpacity>
-        {/*limpa tudo */}
+        {/* zerador */}
         <TouchableOpacity onPress={handleZerar} style={styles.opButton}>
           <Text style={styles.buttonText}>C</Text>
         </TouchableOpacity>

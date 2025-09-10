@@ -65,15 +65,6 @@ export default function App() {
     }
   };
 
-  /**
-   * Função que processa operações (+, -, ×, ÷)
-   * @param {string} novaOperacao - A operação clicada
-   *
-   * Como funciona:
-   * - Se é a primeira operação, só guarda o número atual
-   * - Se já tinha uma operação pendente, executa ela primeiro
-   * - Depois prepara pra próxima operação
-   */
   const inputOperacao = (novaOperacao) => {
     const valorAtual = parseFloat(display); // Converte o texto em número
 
